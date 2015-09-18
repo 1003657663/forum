@@ -1,0 +1,80 @@
+html{
+    height: 100%;
+}
+html,body{
+    margin:0px;
+    padding: 0px;
+}
+ul{
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+}
+.login-ul{
+    float: right;
+}
+.login-ul li{
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.login-ul li:hover{
+    cursor: pointer;
+    background-color: beige;
+}
+.login-ul .first-li{
+    border-right: 1px #000000 solid;
+}
+.top-toolbar{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#login-div{
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+.login-main-ul{
+    border-radius: 10px;
+    margin: auto;
+    width: 250px;
+    background: #c1c1c1;
+}
+.login-main-ul li{
+    padding: 10px;
+    z-index: 100;
+}
+#content-main{
+    width: 100%;
+    height: auto;
+}
+#content-main h3{
+    margin: 0px;
+    padding: 5px;
+}
+#content-first{
+    float: left;
+    background: red;
+    width: 50%;
+}
+#content-right{
+    float: right;
+    width: 50%;
+}
+#content-second{
+    float: left;
+    background: blue;
+    width: 50%;
+}
+#content-third{
+    float: right;
+    background: green;
+    width: 50%;
+}
+#content-third p{
+    margin: 0px;
+    padding-left: 10px;
+}
