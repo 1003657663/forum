@@ -25,6 +25,7 @@ ul{
 .login-ul .first-li{
     border-right: 1px #000000 solid;
 }
+
 .top-toolbar{
     padding-bottom: 10px;
     text-align: center;
@@ -37,11 +38,23 @@ ul{
     width: 100%;
     display: none;
 }
+#register-div{
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    width: 100%;
+    display: none;
+}
 .login-main-ul{
     border-radius: 10px;
-    margin: auto;
+    margin:0 auto;
     width: 250px;
     background: #c1c1c1;
+}
+.login-main-ul img{
+    display: block;
+    float: right;
+    padding: 5px;
 }
 .login-main-ul li{
     padding: 10px;
@@ -77,4 +90,21 @@ ul{
 #content-third p{
     margin: 0px;
     padding-left: 10px;
+}
+#toast{
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+    text-align: center;
+}
+#toast div{
+    margin: 0 auto;
+    height: 100%;
+    width: 200px;
+    background: aquamarine;
+    line-height: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

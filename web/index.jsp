@@ -8,11 +8,23 @@
 <body>
 <div class="top-toolbar">
   <h1>郑大园</h1>
-
   <h2>欢迎来到郑大园</h2>
   <ul class="login-ul">
-    <li class="first-li" onclick="loginDisplay()">登陆</li>
-    <li>注册</li>
+    <%!String name;boolean isLogin;%>
+    <%
+      //判断是否有isLogin字段
+      if(request.getAttribute("isLogin")!=null) {
+        isLogin = (boolean) request.getAttribute("isLogin");
+      }
+      //登陆成功和不成功的判断
+      if(isLogin){
+          name = request.getParameter("name");
+          out.println("<a href=\"#\"><li>"+name+"</li></a>");
+      }else{
+        out.println("<li class=\"first-li\" onclick=\"loginDisplay(1)\">登陆</li>");
+        out.println("<li onclick=\"registerDisplay(1)\">注册</li>");
+      }
+    %>
   </ul>
 </div>
 <hr/>
@@ -60,17 +72,38 @@
 
 <!-- 这个是弹出登录框 -->
 <div id="login-div">
-  <form method="post" action="login">
+  <form method="post" action="login" name="login-form">
     <ul class="login-main-ul">
+      <li><img src="/images/close.png" width="20px" onclick="hideLogin()"/></li>
       <li><p>登录</p></li>
       <li>昵称:<input type="text" name="name"/></li>
       <li>密码:<input type="password" name="password"/></li>
       <li>
-        <input type="submit" value="提交"/>
+        <input type="submit" onclick="return checkEmpty(0)" value="登陆"/>
         <input type="reset" value="重置"/>
       </li>
     </ul>
   </form>
+</div>
+<div id="register-div">
+  <form method="post" action="register" name="register-form">
+    <ul class="login-main-ul">
+      <li><img src="/images/close.png" width="20px" onclick="hideLogin()"/></li>
+      <li><p>注册</p></li>
+      <li>昵称:<input type="text" name="name" placeholder="不小于两位"/></li>
+      <li>密码:<input type="password" name="password" placeholder="不小于6位"/></li>
+      <li>邮箱:<input type="text" name="email"/></li>
+      <li>
+        <input type="submit" onclick="return submitRegister()" value="注册"/>
+        <input type="reset" value="重置"/>
+      </li>
+    </ul>
+  </form>
+</div>
+<div id="toast">
+  <div id="toast-div">
+    正在登陆...
+  </div>
 </div>
 </body>
 </html>
