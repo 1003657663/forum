@@ -10,74 +10,127 @@
     <script src="/js/index-js.js"></script>
 </head>
 <body>
-<%@include file="include/head.jsp"%>
+<%@include file="include/head.jsp" %>
 <div id="content-main">
-    <div id="content-first">
-        <h3>最新帖子</h3>
-
-        <p>今天捡到一个钱包</p>
-
-        <p>天气真棒</p>
-
-        <p>啦啦啦，德玛西亚</p>
-
-        <p>今天捡到一个钱包</p>
-
-        <p>天气真棒</p>
-
-        <p>啦啦啦，德玛西亚</p>
-
-        <p>今天捡到一个钱包</p>
-
-        <p>天气真棒</p>
-
-        <p>啦啦啦，德玛西亚</p>
-
-        <p>今天捡到一个钱包</p>
-
-        <p>天气真棒</p>
-
-        <p>啦啦啦，德玛西亚</p>
-
-        <p>今天捡到一个钱包</p>
-
-        <p>天气真棒</p>
-
-        <p>啦啦啦，德玛西亚</p>
-    </div>
-    <div id="content-right">
-        <div id="content-second">
-            <h3>图文</h3>
-
-            <div>
-                top
+    <div id="content-left">
+        <div class="context">
+            <div class="title-div">
+                <h3 class="title-h3">图文</h3>
             </div>
-            <div>
-                bottom
+
+            <div class="content-div">
+                <!--小标题-->
+                <div class="content-title">
+                    <h3>top</h3>
+                </div>
+                <!--内容-->
+                <div class="content-content">
+                    <div>
+                        <h4>院系内交流</h4>
+                        <p>同一个院系的童鞋再次聚会</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-div">
+                <!--小标题-->
+                <div class="content-title">
+                    <h3>bottom</h3>
+                </div>
+                <!--内容-->
+                <div class="content-content">
+                    <div>
+                        <h4>院系内交流</h4>
+                        <p>同一个院系的童鞋再次聚会</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="content-third">
-            <div>
-                <h3>精华帖</h3>
+    </div>
 
-                <p>今天捡到一个钱包</p>
-
-                <p>天气真棒</p>
-
-                <p>啦啦啦，德玛西亚</p>
+    <div id="content-right">
+        <div class="context">
+            <div class="title-div">
+                <h3 class="title-h3">好帖</h3>
             </div>
-            <div>
-                <h3>热帖</h3>
 
-                <p>今天捡到一个钱包</p>
+            <div class="content-div">
+                <!--小标题-->
+                <div class="content-title">
+                    <h3>热帖</h3>
+                </div>
+                <!--内容-->
+                <div class="content-content">
+                    <div>
+                        <h4>院系内交流</h4>
+                        <p>同一个院系的童鞋再次聚会</p>
+                    </div>
+                </div>
+            </div>
 
-                <p>天气真棒</p>
+            <div class="content-div">
+                <!--小标题-->
+                <div class="content-title">
+                    <h3>精华帖</h3>
+                </div>
+                <!--内容-->
+                <div class="content-content">
+                    <div>
+                        <h4>院系内交流</h4>
+                        <p>同一个院系的童鞋再次聚会</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content-center">
+        <div class="context">
+            <!--大标题-->
+            <div class="title-div">
+                <h3 class="title-h3">板块</h3>
+            </div>
+            <!--小标题和内容-->
+            <div class="content-div">
+                <!--小标题-->
+                <div class="content-title">
+                    <h3>全校交流专区</h3>
+                </div>
+                <!--内容-->
+                <div class="content-content">
+                    <a href="#">
+                        <div>
+                            <h4>院系内交流</h4>
+                            <p>同一个院系的童鞋再次聚会</p>
+                            <p>版主:<span>小青峰</span></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-                <p>啦啦啦，德玛西亚</p>
+            <div class="content-div">
+                <div class="content-title">
+                    <h3>学习交流</h3>
+                </div>
+                <div class="content-content">
+                    <div>
+                        <h4>院系内交流</h4>
+                        <p>同一个院系的童鞋再次聚会</p>
+                    </div>
+                    <div>
+                        <h4>院系内交流</h4>
+                        <p>同一个院系的童鞋再次聚会</p>
+                    </div>
+
+                    <div>
+                        <h4>院系内交流</h4>
+                        <p>同一个院系的童鞋再次聚会</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- 这个是弹出登录框 -->
 <div id="login-div">
@@ -112,6 +165,9 @@
         </form>
         <div class="toast"></div>
     </div>
+</div>
+<div id="foot">
+
 </div>
 </body>
 </html>

@@ -28,37 +28,79 @@
     width: 250px;
     background: #c1c1c1;
 }
+/*-----------这里是中间部分的样式*/
 #content-main{
+    padding-top: 10px;
     width: 100%;
-    height: auto;
 }
-#content-main h3{
-    margin: 0px;
-    padding: 5px;
+#content-main .title-div{
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-#content-first{
-    float: left;
-    background: red;
+#content-main .title-h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 200px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+/*对中间三大块的单独设计*/
+#content-center{
+    margin: 0 auto;
     width: 50%;
+}
+#content-left{
+    width: 25%;
+    float: left;
 }
 #content-right{
+    width: 25%;
     float: right;
-    width: 50%;
 }
-#content-second{
-    float: left;
-    background: blue;
-    width: 50%;
+
+/*内容的div*/
+.content-div{
+    background: #ffffff;
 }
-#content-third{
-    float: right;
-    background: green;
-    width: 50%;
+.content-div .content-title{
+    background: #B9975B;
+    border-bottom: 10px #E9EAEC solid;
 }
-#content-third p{
+.content-div .content-title h3{
+    margin: 0;
+    padding: 5px;
+}
+.content-div .content-content a{
+    color: #000;
+}
+.content-div .content-content h4{
     margin: 0px;
-    padding-left: 10px;
+    padding-bottom: 10px;
 }
+.content-div .content-content div{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    border-bottom: 10px #E9EAEC solid;
+}
+.content-div .content-content div p span{
+    color: #067e42;
+}
+.content-div .content-content div:hover{
+    background: #f0f7f4;
+}
+.content-div p{
+
+}
+/*设置三块之间的空白margin*/
+.context{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/*------------------toast样式*/
 .toast{
     display: none;
     padding-bottom: 10px;

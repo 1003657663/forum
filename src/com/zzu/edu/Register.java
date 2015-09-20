@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -18,6 +19,7 @@ import java.util.Date;
 
 /**
  * Created by 宋超 on 2015/9/19.
+ * 注册用servlet
  */
 @WebServlet(name = "Register",urlPatterns = "/register")
 public class Register extends HttpServlet {
@@ -43,9 +45,14 @@ public class Register extends HttpServlet {
                 //查询是否存在此名字的用户，如果存在返回exist
                 ResultSet resultSet = statement.executeQuery(checkSql);
                 if(resultSet.first()){
+                    //存在此用户
                     out.print("exist");
                 }else {
+                    //注册成功
                     statement.execute(loginSql);
+                    HttpSession session = request.getSession(true);
+                    session.setAttribute("isLogin",true);
+                    session.setAttribute("name",name);
                     out.print(true);
                 }
             } catch (SQLException e) {
