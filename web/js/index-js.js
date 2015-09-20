@@ -1,5 +1,6 @@
 /**
  * Created by chao on 2015/9/18.
+ * 主页用的js
  */
 
 
@@ -7,42 +8,86 @@ function submitRegister(){
     if(!checkEmpty(1)){
         return false;
     }
-    var toast = document.getElementById("toast");
-    var toastText = document.getElementById("toast-div");
     var xhr = new XMLHttpRequest();
     var url = "/register";
+    var subButton = document.getElementById("register-submit");
+    var loginToast = document.getElementsByClassName("toast").item(1);
+    var name = document.forms["register-form"].elements["name"].value;
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
+            subButton.disabled = false;
+            subButton.value = "注册";
             if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
                 //返回成功
                 var getStr = xhr.responseText;
                 if (getStr == "true") {
-                    toastText.text = "注册成功";
-                    animation(toast,1,-50,500);
+                    loginToast.innerText = "注册成功";
+                    setTimeout(hideLogin,700);
+                    var loginUl = document.getElementsByClassName("login-ul").item(0);
+                    loginUl.innerHTML = "<a href='/user'><li>"+name+"</li></a>";
                 }else if(getStr == "exist"){
-                    toastText.text = "用户名重复";
-                    animation(toast,1,-50,500);
-                    registerDisplay(1);
+                    loginToast.innerText = "用户名已存在";
                 } else if (getStr == "false") {
-                    toastText.text = "注册失败";
-                    animation(toast,1,-50,500);
+                    loginToast.innerText = "注册失败";
                 } else {
-                    toastText.text = "您的输入有问题";
-                    animation(toast,1,-50,500);
+                    loginToast.innerText = "异常";
                 }
             } else {
-                alert("出错，错误代码:" + xhr.status);
+                loginToast.innerText = "服务器异常代码:"+xhr.status;
             }
+            loginToast.style.display = 'block';
         }
     };
     xhr.open("post",url,true);
     xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     var registerForm = document.getElementsByName("register-form").item(0);
     xhr.send(serialize(registerForm));
-    hideLogin();
-    //开始顶部动画
-    animation(toast,1,0,500);
-    toastText.text = "正在注册";
+    subButton.value = "正在注册..";
+    subButton.disabled = true;
+    return false;
+}
+function submitLogin(){
+    if(!checkEmpty(0)){
+        return false;
+    }
+    var xhr = new XMLHttpRequest();
+    var loginButton = document.getElementById("login-submit");
+    var loginToast = document.getElementsByClassName("toast").item(0);
+    var name = document.forms["login-form"].elements["name"].value;
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4){
+            loginButton.value = "登陆";
+            loginButton.disabled = false;
+            //获取结果成功
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                var result = xhr.responseText;
+                if(result=="true"){
+                    //登陆成功
+                    loginToast.innerText="登陆成功";
+                    setTimeout(hideLogin,700);
+                    //登陆成功之后把登陆按钮变成用户名
+                    var loginUl = document.getElementsByClassName("login-ul").item(0);
+                    loginUl.innerHTML = "<a href='/user'><li>"+name+"</li></a>";
+                }else if(result=="false"){
+                    //登陆失败
+                    loginToast.innerText="用户名或密码错误";
+                }else if(result=="null"){
+                    //登陆异常
+                    loginToast.innerText="登陆异常";
+                }
+            }else{
+                loginToast.innerText="服务器异常代码:"+xhr.status;
+            }
+            loginToast.style.display = 'block';
+        }
+    };
+    var loginForm = document.getElementsByName("login-form").item(0);
+    var url = "/login";
+    xhr.open("post",url,true);
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xhr.send(serialize(loginForm));
+    loginButton.value = "正在登陆..";
+    loginButton.disabled = true;
     return false;
 }
 
@@ -82,16 +127,13 @@ function animation(element,location,x,time){
                 if (leng > 0) {
                     if (element.offsetLeft >= x) {
                         clearInterval(timer);
-                        timer = null;
                     }
                 }else if(leng<0){
                     if(element.offsetLeft<=x){
                         clearInterval(timer);
-                        timer = null;
                     }
                 }else{
                     clearInterval(timer);
-                    timer = null;
                 }
                 break;
             case 1:
@@ -100,16 +142,13 @@ function animation(element,location,x,time){
                 if (leng > 0) {
                     if (element.offsetTop >= x) {
                         clearInterval(timer);
-                        timer = null;
                     }
                 }else if(leng<0){
                     if(element.offsetTop<=x){
                         clearInterval(timer);
-                        timer = null;
                     }
                 }else{
                     clearInterval(timer);
-                    timer = null;
                 }
                 break;
             case 2:
@@ -146,9 +185,14 @@ function registerDisplay(a){
     }
 }
 //--------用来隐藏登陆和注册窗口的方法
-function hideLogin(){
+function hideLogin() {
     var loginDiv = document.getElementById("login-div");
     var registerDiv = document.getElementById("register-div");
+    var loginToast = document.getElementsByClassName("toast");
+    for (var i = 0; i < loginToast.length; i++) {
+        loginToast[i].style.display = 'none';
+        loginToast[i].innerText = "";
+    }
     loginDiv.style.display = 'none';
     registerDiv.style.display = 'none';
 }

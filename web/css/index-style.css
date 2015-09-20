@@ -1,35 +1,3 @@
-html{
-    height: 100%;
-}
-html,body{
-    margin:0px;
-    padding: 0px;
-}
-ul{
-    margin: 0px;
-    padding:0px;
-    list-style: none;
-}
-.login-ul{
-    float: right;
-}
-.login-ul li{
-    float: left;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.login-ul li:hover{
-    cursor: pointer;
-    background-color: beige;
-}
-.login-ul .first-li{
-    border-right: 1px #000000 solid;
-}
-
-.top-toolbar{
-    padding-bottom: 10px;
-    text-align: center;
-}
 
 #login-div{
     position: absolute;
@@ -45,12 +13,6 @@ ul{
     width: 100%;
     display: none;
 }
-.login-main-ul{
-    border-radius: 10px;
-    margin:0 auto;
-    width: 250px;
-    background: #c1c1c1;
-}
 .login-main-ul img{
     display: block;
     float: right;
@@ -59,6 +21,12 @@ ul{
 .login-main-ul li{
     padding: 10px;
     z-index: 100;
+}
+.login-main-div{
+    border-radius: 10px;
+    margin:0 auto;
+    width: 250px;
+    background: #c1c1c1;
 }
 #content-main{
     width: 100%;
@@ -91,20 +59,8 @@ ul{
     margin: 0px;
     padding-left: 10px;
 }
-#toast{
-    position: absolute;
-    top: -50px;
-    width: 100%;
-    height: 50px;
-    z-index: 100;
-    text-align: center;
-}
-#toast div{
-    margin: 0 auto;
-    height: 100%;
-    width: 200px;
-    background: aquamarine;
-    line-height: 50px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+.toast{
+    display: none;
+    padding-bottom: 10px;
+    color: red;
 }
