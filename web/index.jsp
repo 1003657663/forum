@@ -123,10 +123,12 @@
                         String getBigAdminNameSql = "select name from user where id=" + bigAdminID;
                         Statement statement1 = connectDB.getState();
                         ResultSet resultSet = statement1.executeQuery(getBigAdminNameSql);
+                        out.print("<h3>" + name + "</h3>");
                         if (resultSet.first()) {
                             String bigAdminName = resultSet.getString("name");
-                            out.println("<h3>" + name + "</h3><p>版主:<a href='#'>"+bigAdminName+"<a/></p>");
+                            out.print("<p>版主:<a href='#'>"+bigAdminName+"<a/></p>");
                         }
+                        out.print("\r\n");
                         out.println("</div>");
                         //-----------------下面数据库获取小版块标题
                         String getSmallbanSql = "select id,name,descript from smallbankuai where parentID=" + bigbanId;

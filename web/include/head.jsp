@@ -30,7 +30,7 @@
     %>
     <a href="/user">
       <li><img width="40px" height="40px" src="user-file/head-photo/1.jpeg"/></li>
-      <li>songchao</li>
+      <li><%=name%></li>
       <li>exit</li>
     </a>
     <%

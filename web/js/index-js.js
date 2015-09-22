@@ -24,7 +24,11 @@ function submitRegister(){
                     loginToast.innerText = "注册成功";
                     setTimeout(hideLogin,700);
                     var loginUl = document.getElementsByClassName("login-ul").item(0);
-                    loginUl.innerHTML = "<a href='/user'><li>"+name+"</li></a>";
+                    loginUl.innerHTML = "<a href='/user'>"
+                    +"<li><img width='40px' height='40px' src='user-file/head-photo/1.jpeg'/></li>"
+                    +"<li>"+name+"</li>"
+                        +"<li>exit</li>"
+                        +"</a>";
                 }else if(getStr == "exist"){
                     loginToast.innerText = "用户名已存在";
                 } else if (getStr == "false") {
@@ -67,7 +71,11 @@ function submitLogin(){
                     setTimeout(hideLogin,700);
                     //登陆成功之后把登陆按钮变成用户名
                     var loginUl = document.getElementsByClassName("login-ul").item(0);
-                    loginUl.innerHTML = "<a href='/user'><li>"+name+"</li></a>";
+                    loginUl.innerHTML = "<a href='/user'>"
+                        +"<li><img width='40px' height='40px' src='user-file/head-photo/1.jpeg'/></li>"
+                        +"<li>"+name+"</li>"
+                        +"<li>exit</li>"
+                        +"</a>";
                 }else if(result=="false"){
                     //登陆失败
                     loginToast.innerText="用户名或密码错误";

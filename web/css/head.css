@@ -24,6 +24,10 @@ ul{
     padding-right: 10px;
 }
 .login-ul li{
+    height: 40px;
+    line-height: 40px;
+}
+.login-ul li{
     float: left;
     padding-left: 5px;
     padding-right: 5px;
@@ -33,7 +37,7 @@ ul{
     background-color: beige;
 }
 .login-ul .first-li{
-    border-right: 1px #000000 solid;
+    /*border-right: 1px #000000 solid;*/
 }
 
 .top-toolbar{
