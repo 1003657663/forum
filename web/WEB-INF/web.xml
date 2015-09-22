@@ -30,4 +30,12 @@
         <servlet-name>user</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>div</servlet-name>
+        <jsp-file>/div.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>div</servlet-name>
+        <url-pattern>/div</url-pattern>
+    </servlet-mapping>
 </web-app>

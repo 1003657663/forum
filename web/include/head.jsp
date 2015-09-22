@@ -14,26 +14,36 @@
 <body>
 <div class="top-toolbar">
   <img src="images/forum.png"/>
+
   <ul class="login-ul">
     <%!
       String name;
       Boolean isLogin;
     %>
     <%
-      //判断是否有isLogin字段
+    //判断是否有isLogin字段
       isLogin = (Boolean) session.getAttribute("isLogin");
       if (isLogin != null) {
         //登陆成功和不成功的判断
         if (isLogin) {
           name = (String) session.getAttribute("name");
-          out.println("<a href=\"/user\"><li>" + name + "</li></a>");
-        } else {
-          out.println("<li class=\"first-li\" onclick=\"loginDisplay(1)\">登陆</li>");
-          out.println("<li onclick=\"registerDisplay(1)\">注册</li>");
-        }
+    %>
+    <a href="/user">
+      <li><img width="40px" height="40px" src="user-file/head-photo/1.jpeg"/></li>
+      <li>songchao</li>
+      <li>exit</li>
+    </a>
+    <%
       }else{
-        out.println("<li class=\"first-li\" onclick=\"loginDisplay(1)\">登陆</li>");
-        out.println("<li onclick=\"registerDisplay(1)\">注册</li>");
+    %>
+    <li class="first-li" onclick="loginDisplay(1)">登陆</li>
+    <li onclick="registerDisplay(1)">注册</li>
+    <%
+      }}else{
+    %>
+        <li class="first-li" onclick="loginDisplay(1)">登陆</li>
+        <li onclick="registerDisplay(1)">注册</li>
+    <%
       }
     %>
   </ul>

@@ -1,7 +1,6 @@
 package com.zzu.edu;
 
 import com.zzu.myClass.ConnectDB;
-import sun.text.resources.FormatData;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -56,8 +55,8 @@ public class Register extends HttpServlet {
                     out.print(true);
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
-                out.print(false);
+                response.setStatus(500);
+                out.print("null");
             }
         }else {
             out.print("null");

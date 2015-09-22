@@ -10,23 +10,24 @@ public class ConnectDB {
     Connection connection = null;
     Statement statement = null;
     public ConnectDB(){
+        String url = "jdbc:mysql://localhost:3306/forum?characterEncoding=utf-8";
+        String name = "root";
+        String password = "19930926";
         try {
             Class.forName("org.gjt.mm.mysql.Driver").newInstance();
+            connection = DriverManager.getConnection(url,name,password);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
     public Statement getState(){
-        String url = "jdbc:mysql://localhost:3306/forum?characterEncoding=utf-8";
-        String name = "root";
-        String password = "19930926";
-
         try {
-            connection = DriverManager.getConnection(url,name,password);
             statement = connection.createStatement();
             return statement;
         } catch (SQLException e) {

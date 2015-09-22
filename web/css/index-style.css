@@ -1,4 +1,6 @@
-
+a{
+    color: #067e42;
+}
 #login-div{
     position: absolute;
     top: 200px;
@@ -67,11 +69,16 @@
 }
 .content-div .content-title{
     background: #B9975B;
+    padding: 5px;
     border-bottom: 10px #E9EAEC solid;
 }
-.content-div .content-title h3{
+.content-div .content-title h3,.content-div .content-title p{
+    display: inline;
     margin: 0;
-    padding: 5px;
+}
+.content-div .content-title p{
+    font-size: 14px;
+    float: right;
 }
 .content-div .content-content a{
     color: #000;
@@ -88,6 +95,9 @@
 }
 .content-div .content-content div p span{
     color: #067e42;
+}
+.content-div .content-content div p{
+    font-size: 13px;
 }
 .content-div .content-content div:hover{
     background: #f0f7f4;

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="unnamed">
-    <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
+  <artifact type="war" name="forumwar">
+    <output-path>$PROJECT_DIR$/out/artifacts/forumwar</output-path>
     <root id="archive" name="tomm.war">
       <element id="javaee-facet-resources" facet="forum/web/Web" />
       <element id="directory" name="WEB-INF">
