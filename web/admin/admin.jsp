@@ -1,5 +1,5 @@
 <%@ page import="java.sql.Statement" %>
-<%@ page import="com.zzu.myClass.ConnectDB" %>
+<%@ page import="com.zzu.AboutDB.ConnectDB" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
 <%--

@@ -1,6 +1,6 @@
 package com.zzu.edu;
 
-import com.zzu.myClass.ConnectDB;
+import com.zzu.AboutDB.ConnectDB;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,4 +1,4 @@
-package com.zzu.myClass;
+package com.zzu.AboutDB;
 
 import java.sql.*;
 
