@@ -13,6 +13,9 @@ public class Tiezi {
     private int click;
     private int like;
     private int isGood;
+    public Tiezi(){
+
+    }
 
     public int getId() {
         return id;
@@ -84,9 +87,5 @@ public class Tiezi {
 
     public void setIsGood(int isGood) {
         this.isGood = isGood;
-    }
-
-    Tiezi(){
-
     }
 }

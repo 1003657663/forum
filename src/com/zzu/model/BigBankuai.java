@@ -41,7 +41,7 @@ public class BigBankuai {
         this.admin = admin;
     }
 
-    BigBankuai(){
+    public BigBankuai(){
 
     }
 

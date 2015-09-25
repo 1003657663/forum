@@ -84,7 +84,6 @@
                 <div class="content-content">
                     <div>
                         <h4>院系内交流</h4>
-
                         <p>同一个院系的童鞋再次聚会</p>
                     </div>
                 </div>

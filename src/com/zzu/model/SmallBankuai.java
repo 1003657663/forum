@@ -51,7 +51,7 @@ public class SmallBankuai {
         this.time = time;
     }
 
-    SmallBankuai(){
+    public SmallBankuai(){
 
     }
 }
